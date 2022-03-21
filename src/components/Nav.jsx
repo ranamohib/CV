@@ -1,19 +1,22 @@
 import React from 'react';
-import '../styles/nav.css';
 
 function Nav() {
   return (
     <div className='Nav'>
-        <nav className="nav-bar container">
-          <a href="/"><h2 className="logo">logo</h2></a>
-          <div className="menu">
-            <h2>Genertate Cv</h2>
+      <nav className="navbar is-transparent has-shadow" role="navigation" aria-label="main navigation">
+        <div className="navbar-brand">
+          <a className="navbar-item" href="https://bulma.io">
+            <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: Free, open source, and modern CSS framework based on Flexbox" width="112" height="28"/>
+          </a>
+        </div>
+        <div className="navbar-menu is-active">
+          <div className="navbar-end">
+            <div className="navbar-item">
+              <a href="/" className="button is-black">GitHub</a>
+            </div>
           </div>
-          <div className="right">
-            <a href="" className="btn"><span>GitHub</span></a>
-          </div>
-        </nav>
-
+        </div>
+      </nav>
     </div>
   )
 }
