@@ -1,5 +1,7 @@
+import './App.css'
 import Nav from './components/Nav';
 import Personal from './components/Personal';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -9,6 +11,7 @@ function App() {
           <Nav/>
         </header>
         <Personal/>
+        <Footer/>
     </div>
   );
 }
