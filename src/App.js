@@ -1,8 +1,8 @@
 import './App.css'
 import React, {useState} from 'react';
 import Nav from './components/Nav';
+import Experiences from './components/Experiences';
 import Personal from './components/Personal';
-import Experience from './components/Experience';
 import Footer from './components/Footer';
 import uniqid from "uniqid";
 
@@ -16,7 +16,6 @@ function App() {
     to:"",
   }
   const usePersonal = useState({
-    firstName:"",
     lastName:"",
     title:"",
     email:"",
@@ -36,26 +35,8 @@ function App() {
             <h4 className="title is-4">Personal Information</h4>
             <Personal usePersonal={usePersonal} />
             <h4 className="title is-4">Experience</h4>
-            {experiences.map((experience) => {
-              return <Experience
-                key={experience.id}
-                id={experience.id}
-                experiences={experiences}
-                setExperiences={setExperiences}
-              />;
-            })}
-            <button
-              className="button is-black"
-              onClick={() => {
-                setExperiences(
-                  experiences.concat({...experience,id:uniqid()})
-                );
-              }}
-            >
-              <span className="icon">
-                <i className="fas fa-add"></i>
-              </span>
-            </button>
+            <Experiences experiences={experiences} setExperiences={setExperiences} experience={experience}/>
+            <h4 className="title is-4">Education</h4>
           </div>
         </div>
       </section>
