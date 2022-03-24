@@ -32,10 +32,12 @@ function Experience({id,experiences,setExperiences}) {
       </div>
       <div class="field is-grouped">
         <p class="control is-expanded">
-          <input className="input" type="text" placeholder="From Date"/>
+          <input className="input" type="text" placeholder="From Date"
+            onChange={(e) => setExperience({ ...experience, from: e.target.value })} value={experience.from}/>
         </p>
         <p class="control is-expanded">
-          <input className="input" type="text" placeholder="To Date"/>
+          <input className="input" type="text" placeholder="To Date"
+            onChange={(e) => setExperience({ ...experience, to: e.target.value })} value={experience.to}/>
         </p>
       </div>
     </div>

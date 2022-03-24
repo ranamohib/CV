@@ -4,7 +4,7 @@ import uniqid from "uniqid"
 
 function Experiences({experiences,setExperiences,experience}) {
     return (
-        <div>
+        <div className="block">
             {experiences.map((experience) => {
                 return <Experience
                     key={experience.id}

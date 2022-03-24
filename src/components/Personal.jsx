@@ -47,10 +47,15 @@ function Personal({usePersonal}) {
         </p>
       </div>
       <div className="field">
+        <p className="control ">
+          <input className="input" type="text" placeholder="Address"
+            onChange={(e) => setPersonal({...personal,address: e.target.value})} value={personal.address}/>
+        </p>
+      </div>
+      <div className="field">
         <div className="control">
           <textarea className="textarea has-fixed-size" placeholder="Professional Summary"
           onChange={(e) => setPersonal({...personal,summary: e.target.value})} value={personal.summary}>
-
           </textarea>
         </div>
       </div>
