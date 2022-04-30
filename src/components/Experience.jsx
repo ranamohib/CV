@@ -7,7 +7,7 @@ function Experience({id,experiences,setExperiences}) {
   }
   return (
     <div className='notification'>
-          <button class="delete" onClick={() => 
+          <button className="delete" onClick={() => 
               setExperiences(experiences.filter(item => item.id !== id))
               }>
           </button>
@@ -30,12 +30,12 @@ function Experience({id,experiences,setExperiences}) {
             </textarea>
         </div>
       </div>
-      <div class="field is-grouped">
-        <p class="control is-expanded">
+      <div className="field is-grouped">
+        <p className="control is-expanded">
           <input className="input" type="text" placeholder="From Date"
             onChange={(e) => setExperience({ ...experience, from: e.target.value })} value={experience.from}/>
         </p>
-        <p class="control is-expanded">
+        <p className="control is-expanded">
           <input className="input" type="text" placeholder="To Date"
             onChange={(e) => setExperience({ ...experience, to: e.target.value })} value={experience.to}/>
         </p>

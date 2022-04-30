@@ -7,10 +7,10 @@ function Education({id,educations,setEducations}) {
     }
   return (
     <div className="notification">
-                  <button class="delete" onClick={() => 
-              setEducations(educations.filter(item => item.id !== id))
-              }>
-          </button>
+      <button className="delete" onClick={() => 
+        setEducations(educations.filter(item => item.id !== id))
+      }>
+      </button>
       <div className="field">
         <p className="control ">
           <input className="input" type="text" placeholder="University/College"
@@ -36,12 +36,12 @@ function Education({id,educations,setEducations}) {
             </textarea>
         </div>
       </div>
-      <div class="field is-grouped">
-        <p class="control is-expanded">
+      <div className="field is-grouped">
+        <p className="control is-expanded">
           <input className="input" type="text" placeholder="Start Date"
             onChange={(e) => setExperience({ ...education, start: e.target.value })} value={education.start}/>
         </p>
-        <p class="control is-expanded">
+        <p className="control is-expanded">
           <input className="input" type="text" placeholder="End Date"
             onChange={(e) => setExperience({ ...education, end: e.target.value })} value={education.end}/>
         </p>

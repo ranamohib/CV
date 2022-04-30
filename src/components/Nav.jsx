@@ -21,13 +21,13 @@ function Nav({setPersonal,personalExapmle,setExperiences,experiencesExample,setE
               </a>
             </div>
             <div className="navbar-item">
-            <button class="button is-black" onClick={()=>{
+            <button className="button is-black" onClick={()=>{
               setPersonal(personalExapmle);
               setExperiences(experiencesExample);
               setEducations(educationsExample);
               }}>
-              <span class="icon is-small">
-                <i class="fas fa-share-from-square"></i>
+              <span className="icon is-small">
+                <i className="fas fa-share-from-square"></i>
               </span>
               <span>Load Example</span>
             </button>

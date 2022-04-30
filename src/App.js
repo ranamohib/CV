@@ -6,7 +6,7 @@ import Personal from './components/Personal';
 import Footer from './components/Footer';
 import uniqid from "uniqid";
 import Educations from './components/Educations';
-import PrexView from 'prexview';
+
 
 function App() {
   const personalExample = {
@@ -72,22 +72,21 @@ function App() {
   const [button,setButton] = useState("");
   async function getPDF(json) {
     const response = await fetch('https://api.craftmypdf.com/v1/create', {
-    method:"POST",  
-    headers:{
-      'X-API-KEY':"4a70NzI5OjcyMzphWW5TQmRLVnZnMkFjVkV"
-      },
-    body:json
+      method:"POST",
+      headers:{
+        'X-API-KEY':"4a70NzI5OjcyMzphWW5TQmRLVnZnMkFjVkV",
+        },
+      body:json
     });
-    const blob = await response.blob();
+    const data = await response.json()
     setButton("");
-    const url = window.URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.style.display = 'none';
-    a.href = url;
-    a.target = "_blank";
-    document.body.appendChild(a);
-    a.click();
-    window.URL.revokeObjectURL(url);
+    var link = document.createElement("a");
+    link.download = 'cv.pdf';
+    link.href = data.file;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
   }
   const [personal,setPersonal] = usePersonal;
   const [experiences,setExperiences] = useState([{...experience,id:uniqid()}]);
@@ -109,16 +108,16 @@ function App() {
             <Experiences experiences={experiences} setExperiences={setExperiences} experience={experience}/>
             <h4 className="title is-4">Education</h4>
             <Educations educations={educations} setEducations={setEducations} education={education}/>
-            <button class={`button is-black ${button}`}  onClick={()=>{
+            <button className={`button is-black ${button}`}  onClick={()=>{
               setButton("is-loading")
               getPDF(JSON.stringify({
-                "output_file": "cv.pdf",
-                "export_type":"file",
+                output_file: "cv.pdf",
+                export_type:"json",
                 template_id:"e0077b2b1bfc0f26",
                 data:{educations,experiences,personal}
             }))}}>
-              <span class="icon is-small">
-                <i class="fas fa-download"></i>
+              <span className="icon is-small">
+                <i className="fas fa-download"></i>
               </span>
               <span>Download</span>
             </button>
