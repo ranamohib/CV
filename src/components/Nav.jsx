@@ -6,8 +6,8 @@ function Nav({setPersonal,personalExapmle,setExperiences,experiencesExample,setE
     <div className='Nav'>
       <nav className="navbar is-transparent has-shadow is-spaced" role="navigation" aria-label="main navigation">
         <div className="navbar-brand">
-          <a className="navbar-item" href="https://bulma.io">
-            <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: Free, open source, and modern CSS framework based on Flexbox" width="112" height="28"/>
+          <a className="navbar-item" href="/">
+            <strong>Mohib</strong>
           </a>
         </div>
         <div className="navbar-menu is-active">
